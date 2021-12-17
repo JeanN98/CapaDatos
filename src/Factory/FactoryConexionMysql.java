@@ -14,7 +14,7 @@ import java.sql.Statement;
  *
  * @author PIERO
  */
-public abstract class FactoryConexionMysql extends ConexionDb{
+public abstract class FactoryConexionMysql extends  ConnectionDb {
    
     
         public FactoryConexionMysql(String[] params) {  //recibve un array de string parametros
@@ -26,7 +26,7 @@ public abstract class FactoryConexionMysql extends ConexionDb{
             
             String conexionUrsl = "jdbc:sqlserver://localhost:1433;"
               + "database=retinvtl;"
-               +"user=stalin123;"
+               +"user=stalindb;"
                +"password= 12345;"
                +"loginTimeout=30;"; 
            try {

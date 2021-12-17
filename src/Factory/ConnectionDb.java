@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author PIERO
  */
-public abstract class  ConexionDb {
+public abstract class  ConnectionDb  {
     
     protected String[] params;
    protected Connection connection;  //objeto de conexion
