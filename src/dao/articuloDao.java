@@ -5,10 +5,16 @@
  */
 package dao;
 
+import java.util.List;
+import model.articulo;
+
 /**
  *
  * @author Stalin
  */
 public interface articuloDao {
-    
+    public List<articulo> list();    //prototipo metodo listar
+    public articulo edit(int id);    //prototipo metodo editar
+    public boolean save (articulo kardex);   //prototipo metodo guardar
+    public boolean delete(int id);      //prototipo metodo borrar
 }

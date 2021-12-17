@@ -6,6 +6,7 @@
 package dao;
 
 import Factory.ConnectionDb;
+import Factory.FactoryConnectionDb;
 import model.articulo;
 
 /**
@@ -92,11 +93,11 @@ return articulo; //devuelve el objeto creado
 
 @Override
 public boolean save(articulo articulo) {
-this.conn = FactoryConnectionDb.open(FactoryConnectionDb.PGSQL); //abrir la conexion con bd mysql
+this.conn = FactoryConnectionDb.open(FactoryConnectionDb.SQLSERVER); //abrir la conexion con bd mysql
 boolean save = true; //bandera para indicar si se almacenaron los cambios
 
 try {
-if (articulo.getIdarticulo() == 0) { //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo
+if (articulo.getID_ARTICULO() == 0) { //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo
 StringBuilder sql = new StringBuilder(); //para crear la sentencia sql
 sql.append("INSERT INTO \"articulo\" (\"codigo\", \"descripcion\", \"stockactual\", \"stockminimo\", \"tipo\", \"fechacaducidad\") VALUES ('").append(articulo.getCodigo());
 sql.append("', '").append(articulo.getDescripcion()); //crear la cadena de conexion
