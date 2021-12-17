@@ -38,6 +38,9 @@ public class articulo {
         this.DESCIPCION_DETALLE = DESCIPCION_DETALLE;
     }
     
+    public articulo() {
+            }
+    
     
 
     public int getID_ARTICULO() {
