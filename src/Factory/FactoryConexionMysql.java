@@ -21,7 +21,7 @@ public abstract class FactoryConexionMysql extends ConexionDb{
         this.params = params;    //el atributo params de superclase recibe el parametro del constructor
         this.open();        //llama al metodo que se implementa abajo
     }
-    
+    ///comentario
         public static Connection getConexion(){
             
             String conexionUrsl = "jdbc:sqlserver://localhost:1433;"
