@@ -24,6 +24,8 @@ public class bodega_sucursal {
         this.TELEFONO = TELEFONO;
         this.ID_USUARIO_CARGO = ID_USUARIO_CARGO;
     }
+    public bodega_sucursal(){
+    }
    
    
 

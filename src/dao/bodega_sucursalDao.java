@@ -5,10 +5,20 @@
  */
 package dao;
 
+import java.util.List;
+
+import model.bodega_sucursal;
+
 /**
  *
  * @author Stalin
  */
 public interface bodega_sucursalDao {
+    
+    
+    public List<bodega_sucursal> list();    //prototipo metodo listar
+    public bodega_sucursal edit(int id);    //prototipo metodo editar
+    public boolean save (bodega_sucursal bodega);   //prototipo metodo guardar
+    public boolean delete(int id);      //protot
     
 }
