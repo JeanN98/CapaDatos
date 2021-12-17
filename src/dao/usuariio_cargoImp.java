@@ -41,7 +41,7 @@ public class usuariio_cargoImp implements usuario_cargoDao {
 "           ,[DIRECCION]\n" +
 "           ,[USUARIO]\n" +
 "           ,[CONTRACENA])\n" +
-"     VALUES\n" +
+"            VALUES\n" +
 "           (10\n" +
 "           ,'0501771159'\n" +
 "           ,1\n" +

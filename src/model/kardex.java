@@ -16,6 +16,7 @@ public class kardex {
        private float CANTIDAD;
        private String TIPO;
 
+    public kardex (){}
     public kardex(int ID_KARDEX, int ID_EMPLEADO, String FECHA_REGISTRO, float CANTIDAD, String TIPO) {
         this.ID_KARDEX = ID_KARDEX;
         this.ID_EMPLEADO = ID_EMPLEADO;

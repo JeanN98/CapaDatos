@@ -18,6 +18,10 @@ public class empleado {
      private String FECHA_FINAL;
      private int ID_BODEGA;
 
+     
+     public empleado (){
+     
+     }
     public empleado(String CI_EMPLEADO, String NOMBRE, String DIRECCION, String FECHA_INICIO, String FECHA_FINAL) {
         this.CI_EMPLEADO = CI_EMPLEADO;
         this.NOMBRE = NOMBRE;

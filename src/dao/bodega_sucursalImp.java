@@ -9,6 +9,7 @@ package dao;
  *
  * @author Stalin
  */
-public class bodega_sucursalImp {
+public class bodega_sucursalImp  implements bodega_sucursalDao{
+    
     
 }

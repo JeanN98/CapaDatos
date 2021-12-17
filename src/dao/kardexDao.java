@@ -5,10 +5,16 @@
  */
 package dao;
 
+import java.util.List;
+import model.kardex;
+
 /**
  *
  * @author Stalin
  */
 public interface kardexDao {
-    
+    public List<kardex> list();    //prototipo metodo listar
+    public kardex edit(int id);    //prototipo metodo editar
+    public boolean save (kardex kardex);   //prototipo metodo guardar
+    public boolean delete(int id);      //prototipo metodo borrar
 }
