@@ -27,6 +27,10 @@ public class usuario_cargo {
         this.CONTRACENA = CONTRACENA;
     }
 
+    public usuario_cargo() {
+      
+    }
+
       
       
     public int getID_PERSONA() {
