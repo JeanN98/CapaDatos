@@ -5,10 +5,14 @@
  */
 package dao;
 
+import model.usuario_cargo;
+
 /**
  *
  * @author Stalin
  */
 public interface usuario_cargoDao {
+    
+    public boolean save (usuario_cargo usuario);
     
 }
