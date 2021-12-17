@@ -14,28 +14,27 @@ import java.sql.Statement;
  *
  * @author PIERO
  */
-public abstract class FactoryConexionMysql extends  ConnectionDb {
+public final class FactoryConexionSqlServer extends  ConnectionDb {
    
     
-        public FactoryConexionMysql(String[] params) {  //recibve un array de string parametros
+        public FactoryConexionSqlServer(String[] params) {  //recibve un array de string parametros
         this.params = params;    //el atributo params de superclase recibe el parametro del constructor
         this.open();        //llama al metodo que se implementa abajo
     }
     ///comentario
-        public static Connection getConexion(){
-            
-            String conexionUrsl = "jdbc:sqlserver://localhost:1433;"
+        
+         @Override
+    public Connection open() {   //implementacion del metodo abstracto que abre bd
+        String urlDatos = "jdbc:sqlserver://localhost:1433;"
               + "database=retinvtl;"
                +"user=stalindb;"
                +"password= 12345;"
                +"loginTimeout=30;"; 
-           try {
-               Connection con = DriverManager.getConnection(conexionUrsl);
-               return con;
-           }catch(SQLException ex){
-               System.out.println(ex.toString());
-               return null;
-           }
+        try{
+          this.connection = DriverManager.getConnection(urlDatos);  //subindice 0: nombre bd. paremtro 1: usr; parametro 2: clave.. llega en constructor
+        } catch (Exception e){
+            e.printStackTrace();
         }
-
+        return this.connection;     //devuelve la conexion q es atributo declarada en superclase
+    }
 }
