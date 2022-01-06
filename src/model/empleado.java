@@ -30,8 +30,18 @@ public class empleado {
         this.FECHA_FINAL = FECHA_FINAL;
     }
 
-     
-     
+    public empleado(int ID_EMPLEADO, String CI_EMPLEADO, String NOMBRE, String DIRECCION, String FECHA_INICIO, String FECHA_FINAL, int ID_BODEGA) {
+        this.ID_EMPLEADO = ID_EMPLEADO;
+        this.CI_EMPLEADO = CI_EMPLEADO;
+        this.NOMBRE = NOMBRE;
+        this.DIRECCION = DIRECCION;
+        this.FECHA_INICIO = FECHA_INICIO;
+        this.FECHA_FINAL = FECHA_FINAL;
+        this.ID_BODEGA = ID_BODEGA;
+    }
+    
+    
+    
     public int getID_EMPLEADO() {
         return ID_EMPLEADO;
     }

@@ -43,7 +43,6 @@ public class articuloImp implements articuloDao {
                 articulo articulo = new articulo();  
                 articulo.setID_ARTICULO(rs.getInt("ID_ARTICULO"));
                 articulo.setID_CATEGORIA(rs.getInt("ID_CATEGORIA"));
-                articulo.setID_KARDEX(rs.getInt("ID_KARDEX"));
                 articulo.setID_BODEGA(rs.getInt("ID_BODEGA"));
                 articulo.setNOMBRE(rs.getString("NOMBRE"));
                 articulo.setPRECIO_UNITARIO(rs.getFloat("PRECIO_TOTAL"));
@@ -74,39 +73,35 @@ public class articuloImp implements articuloDao {
             if (articulo.getID_ARTICULO() == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo 
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
                 sql.append("INSERT INTO [dbo].[ARTICULO]\n" +
-"           ([ID_ARTICULO]\n" +
 "           ,[ID_CATEGORIA]\n" +
-"           ,[ID_KARDEX]\n" +
 "           ,[ID_BODEGA]\n" +
+"           ,[CODIGO_BARRA])\n" +
 "           ,[NOMBRE]\n" +
 "           ,[PRECIO_TOTAL]\n" +
 "           ,[FECHA_CADUCIDAD]\n" +
 "           ,[STOCK]\n" +
 "           ,[DESCRIPCION]\n" +
-"           ,[CODIGO_BARRA])\n" +
-"     VALUES(").append(articulo.getID_ARTICULO());
-                sql.append(", ").append(articulo.getID_CATEGORIA());      //crear la cadena de conexion
-                sql.append(", ").append(articulo.getID_KARDEX());      //crear la cadena de conexion
-                sql.append(", ").append(articulo.getID_BODEGA());
+"     VALUES(").append(articulo.getID_CATEGORIA());
+                sql.append(", ").append(articulo.getID_BODEGA());      //crear la cadena de conexion
+                sql.append(", ").append(articulo.getCODIGO_BARRA());
                 sql.append(", '").append(articulo.getNOMBRE());
-                sql.append("', '").append(articulo.getPRECIO_UNITARIO());
+                sql.append("', '").append(articulo.getPRECIO_TOTAL());
                 sql.append("', '").append(articulo.getFECHA_CADUCIDAD());
                 sql.append("', '").append(articulo.getSTOCK());
-                sql.append("', '").append(articulo.getDESCRIPCION());
-                sql.append("', '").append(articulo.getCODIGO_BARRA()).append("')");      //crear la cadena de conexion
+                sql.append("', '").append(articulo.getDESCRIPCION()).append("')"); //crear la cadena de conexion
                 this.conn.execute(sql.toString());      //ejecuta la query
             } else {   //es un registro previamente existente: estamos actualizando
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
                 sql.append("UPDATE [dbo].[ARTICULO] SET [ID_ARTICULO] = ").append(articulo.getID_ARTICULO());
                 sql.append(", [ID_CATEGORIA]= ").append(articulo.getID_CATEGORIA());
-                sql.append(", [ID_KARDEX] = ").append(articulo.getID_KARDEX());
                 sql.append(", [ID_BODEGA] = ").append(articulo.getID_BODEGA());
+                sql.append(",[CODIGO_BARRA]=").append(articulo.getCODIGO_BARRA());
                 sql.append(", [NOMBRE] = '").append(articulo.getNOMBRE());
-                sql.append("', [PRECIO_TOTAL] = '").append(articulo.getPRECIO_UNITARIO());
+                sql.append("', [PRECIO_TOTAL] = '").append(articulo.getPRECIO_TOTAL());
                 sql.append("', [FECHA_CADUCIDAD] = '").append(articulo.getFECHA_CADUCIDAD());
                 sql.append("', [STOCK] ='").append(articulo.getSTOCK());
-                sql.append("', [DESCRIPCION] =  '").append(articulo.getDESCRIPCION());
-                sql.append("', [CODIGO_BARRA] = '").append(articulo.getCODIGO_BARRA()).append("' WHERE [ID_ARTICULO] = ").append(articulo.getID_ARTICULO());  
+                sql.append("', [DESCRIPCION] =  '").append(articulo.getDESCRIPCION()).append("' WHERE [ID_ARTICULO] = ").append(articulo.getID_ARTICULO());
+               
 
 //crear la cadena de conexion
                    //crear la cadena de conexion
@@ -157,17 +152,15 @@ public class articuloImp implements articuloDao {
 
             while (rs.next()){          //mientras haya registros cargados en el reseltset
               
-                articulo.setID_ARTICULO(rs.getInt("ID_ARTICULO"));
                 articulo.setID_CATEGORIA(rs.getInt("ID_CATEGORIA"));
-                articulo.setID_KARDEX(rs.getInt("ID_KARDEX"));
                 articulo.setID_BODEGA(rs.getInt("ID_BODEGA"));
+                articulo.setCODIGO_BARRA(rs.getString("CODIGO_BARRA"));
                 articulo.setNOMBRE(rs.getString("NOMBRE"));
                 articulo.setPRECIO_UNITARIO(rs.getFloat("PRECIO_TOTAL"));
                 articulo.setFECHA_CADUCIDAD(rs.getFloat("FECHA_CADUCIDAD"));
                 articulo.setSTOCK(rs.getFloat("STOCK"));
                 articulo.setDESCRIPCION(rs.getString("DESCRIPCION"));
-                articulo.setCODIGO_BARRA(rs.getString("CODIGO_BARRA"));
-                          
+      
             }
         } catch (Exception e) {
             

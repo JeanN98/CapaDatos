@@ -4,8 +4,14 @@
  */
 package capadedatos;
 
+import dao.bodega_sucursalDao;
+import dao.bodega_sucursalImp;
+import dao.empleadoDao;
+import dao.empleadoImp;
 import dao.usuariio_cargoImp;
 import dao.usuario_cargoDao;
+import model.bodega_sucursal;
+import model.empleado;
 import model.usuario_cargo;
 
 /**
@@ -19,10 +25,22 @@ public class CapaDeDatos {
      */
     public static void main(String[] args) {
         
-        usuario_cargo usu = new usuario_cargo();
-        usuario_cargoDao usua= new usuariio_cargoImp();
+        //usuario_cargo usu = new usuario_cargo(0, "0605816602", 1, "stalin","0959440770", "Av Simepre viva", "Stalin","admin");
+        //usuario_cargoDao usua= new usuariio_cargoImp();
         
-        usua.save(usu);
+    
+        
+        bodega_sucursal  bode = new bodega_sucursal(0,"06001100202", "sucursal1", "av siempre viva", "0959440770", 1);
+        bodega_sucursalDao bodeDao = new bodega_sucursalImp();
+        
+        //empleado emple = new empleado("0605816602", "STALIN" ,"av. siempre viva", "14-10-2020", "12-11-2021");
+       // empleadoDao empleDao = new empleadoImp();
+        
+        
+        bodeDao.save(bode);
+       //bodeDao.save(bode);
+        //empleDao.save(emple);
+        
     }
     
 }

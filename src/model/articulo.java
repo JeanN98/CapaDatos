@@ -12,45 +12,50 @@ package model;
 public class articulo {
     private int ID_ARTICULO;
     private int ID_CATEGORIA;
-    private int ID_KARDEX;
     private int	ID_BODEGA;
+    private String CODIGO_BARRA;
     private String NOMBRE;
+    private float PRECIO_TOTAL;
     private float FECHA_CADUCIDAD;
     private float STOCK;
     private String DESCRIPCION;
-    private String CODIGO_BARRA;
     private String NOMBRE_CATEGORIA;
     private String DESCRIPCION_CATEGORIA;
     private float PRECIO_UNITARIO;
     private String CODIGO_BARRA_DETALLE;
     private String DESCIPCION_DETALLE;
 
-    public articulo(String NOMBRE, float FECHA_CADUCIDAD, float STOCK, String DESCRIPCION, String CODIGO_BARRA, String NOMBRE_CATEGORIA, String DESCRIPCION_CATEGORIA, float PRECIO_UNITARIO, String CODIGO_BARRA_DETALLE, String DESCIPCION_DETALLE) {
+    public articulo(int ID_ARTICULO, int ID_CATEGORIA, int ID_BODEGA, String CODIGO_BARRA, String NOMBRE, float PRECIO_TOTAL, float FECHA_CADUCIDAD, float STOCK, String DESCRIPCION, String NOMBRE_CATEGORIA, String DESCRIPCION_CATEGORIA, float PRECIO_UNITARIO, String CODIGO_BARRA_DETALLE, String DESCIPCION_DETALLE) {
+        this.ID_ARTICULO = ID_ARTICULO;
+        this.ID_CATEGORIA = ID_CATEGORIA;
+        this.ID_BODEGA = ID_BODEGA;
+        this.CODIGO_BARRA = CODIGO_BARRA;
         this.NOMBRE = NOMBRE;
+        this.PRECIO_TOTAL = PRECIO_TOTAL;
         this.FECHA_CADUCIDAD = FECHA_CADUCIDAD;
         this.STOCK = STOCK;
         this.DESCRIPCION = DESCRIPCION;
-        this.CODIGO_BARRA = CODIGO_BARRA;
         this.NOMBRE_CATEGORIA = NOMBRE_CATEGORIA;
         this.DESCRIPCION_CATEGORIA = DESCRIPCION_CATEGORIA;
         this.PRECIO_UNITARIO = PRECIO_UNITARIO;
         this.CODIGO_BARRA_DETALLE = CODIGO_BARRA_DETALLE;
         this.DESCIPCION_DETALLE = DESCIPCION_DETALLE;
     }
+
+    
+    
     
     public articulo() {
             }
     
-    
-
-    public int getID_ARTICULO() {
+     public int getID_ARTICULO() {
         return ID_ARTICULO;
-    }
-
-    public void setID_ARTICULO(int ID_ARTICULO) {
+    } // DEL ID SOLO NOS INTERESA ACCEDER A SU VALOR,MAS NO INSERTARLO
+     
+     public void setID_ARTICULO(int ID_ARTICULO) {
         this.ID_ARTICULO = ID_ARTICULO;
     }
-
+     
     public int getID_CATEGORIA() {
         return ID_CATEGORIA;
     }
@@ -59,13 +64,6 @@ public class articulo {
         this.ID_CATEGORIA = ID_CATEGORIA;
     }
 
-    public int getID_KARDEX() {
-        return ID_KARDEX;
-    }
-
-    public void setID_KARDEX(int ID_KARDEX) {
-        this.ID_KARDEX = ID_KARDEX;
-    }
 
     public int getID_BODEGA() {
         return ID_BODEGA;
@@ -81,6 +79,14 @@ public class articulo {
 
     public void setNOMBRE(String NOMBRE) {
         this.NOMBRE = NOMBRE;
+    }
+    
+    public float getPRECIO_TOTAL() {
+        return PRECIO_TOTAL;
+    }
+
+    public void setPRECIO_TOTAL(float PRECIO_TOTAL) {
+        this.PRECIO_TOTAL = PRECIO_TOTAL;
     }
 
     public float getFECHA_CADUCIDAD() {

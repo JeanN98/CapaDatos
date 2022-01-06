@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.util.List;
 import model.usuario_cargo;
 
 /**
@@ -13,6 +14,10 @@ import model.usuario_cargo;
  */
 public interface usuario_cargoDao {
     
+    
+    public List<usuario_cargo> list();    //prototipo metodo listar
+    public usuario_cargo edit(int id);    //prototipo metodo editar
     public boolean save (usuario_cargo usuario);
+    public boolean delete(int id);      //protot
     
 }

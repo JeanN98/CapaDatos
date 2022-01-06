@@ -26,7 +26,7 @@ public class empleadoImp implements empleadoDao {
         this.conn = FactoryConnectionDb.open(FactoryConnectionDb.SQLSERVER); //inicializa conexion por defecto a MySql
 
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT * FROM kardex"); 
+        sql.append("SELECT * FROM EMPLEADO"); 
         
         List<empleado> list = new ArrayList<>();
         
@@ -34,13 +34,13 @@ public class empleadoImp implements empleadoDao {
             ResultSet rs = this.conn.query(sql.toString());  //ejecuta la consulta
             while (rs.next()){  //mientras haya registros en la tabla
                 empleado empleado = new empleado();  
-                empleado.setID_EMPLEADO(0);  
+                empleado.setID_EMPLEADO(rs.getInt("ID_EMPLEADO"));  
                 empleado.setCI_EMPLEADO(rs.getString("CI_EMPLEADO"));  
-                empleado.setNOMBRE(rs.getString("NOMBRE")); 
-                empleado.setID_BODEGA(rs.getInt("ID"));
-                empleado.setDIRECCION(rs.getString("DIRECCIOM"));
+                empleado.setNOMBRE(rs.getString("NOMBRE"));
+                empleado.setDIRECCION(rs.getString("DIRECCION"));
                 empleado.setFECHA_INICIO(rs.getString("FECHA_INICIO")); 
                 empleado.setFECHA_FINAL(rs.getString("FECHA_FINAL"));
+                empleado.setID_BODEGA(rs.getInt("ID_BODEGA"));
                 list.add(empleado);  //añade el objeto temporal en la lista
             }
         } catch (Exception e) {
@@ -54,17 +54,15 @@ public class empleadoImp implements empleadoDao {
     @Override
     public empleado edit(int id) {
         this.conn = FactoryConnectionDb.open(FactoryConnectionDb.SQLSERVER);
-        empleado kardex = new empleado();
+        empleado empleado = new empleado();
         
         StringBuilder sql = new StringBuilder();    //para almacenar la consulta e efectuar en la bd
-        sql.append("SELECT * FROM kardex WHERE id = ").append(id);   //cadena de consulta
+        sql.append("SELECT * FROM EMPLEADO WHERE ID_EMPLEADO = ").append(id);   //cadena de consulta
         
         try {
             ResultSet rs = this.conn.query(sql.toString());  //carga todos los registros que cumplen con la condicion del sql
 
             while (rs.next()){          //mientras haya registros cargados en el reseltset
-               empleado empleado = new empleado();  
-                empleado.setID_EMPLEADO(0);  
                 empleado.setCI_EMPLEADO(rs.getString("CI_EMPLEADO"));  
                 empleado.setNOMBRE(rs.getString("NOMBRE")); 
                 empleado.setID_BODEGA(rs.getInt("ID"));
@@ -77,7 +75,7 @@ public class empleadoImp implements empleadoDao {
         } finally {
             this.conn.close();          //cierra la conexion
         }
-        return kardex;             //devuelve el objeto creado
+        return empleado;             //devuelve el objeto creado
     }
     @Override
     public boolean save(empleado empleado) {
@@ -85,12 +83,11 @@ public class empleadoImp implements empleadoDao {
         boolean save = true;        //bandera para indicar si se almacenaron los cambios
         
         try {
-            if ((empleado.getID_EMPLEADO()) == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo 
+            if ((empleado.getID_EMPLEADO()) == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializacion del atributo 
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
                               
               
-                sql.append("INSERT INTO [dbo].[EMPLEADO] ([ID_EMPLEADO],[CI_EMPLEADO] ,[NOMBRE] ,[DIRECCION] ,[FECHA_INICIO] ,[FECHA_FINAL] ,[ID_BODEGA])VALUES");
-                sql.append("', '").append(empleado.getID_EMPLEADO());      //crear la cadena de conexion
+                sql.append("INSERT INTO [dbo].[EMPLEADO] ([CI_EMPLEADO] ,[NOMBRE] ,[DIRECCION] ,[FECHA_INICIO] ,[FECHA_FINAL] ,[ID_BODEGA]) VALUES (");
                 sql.append("', '").append(empleado.getCI_EMPLEADO());      //crear la cadena de conexion
                 sql.append("', '").append(empleado.getNOMBRE());      //crear la cadena de conexion
                 sql.append("', '").append(empleado.getDIRECCION());      //crear la cadena de conexion

@@ -19,9 +19,8 @@ import java.util.List;
  *
  * @author Stalin
  */
-<<<<<<< HEAD
-public class bodega_sucursalImp  implements bodega_sucursalDao{
-=======
+
+
 public class bodega_sucursalImp implements bodega_sucursalDao{
     
     
@@ -49,7 +48,7 @@ public class bodega_sucursalImp implements bodega_sucursalDao{
                 bodega.setNOMBRE(rs.getString("NOMBRE"));
                 bodega.setDIRECCION(rs.getString("DIRECCION"));
                 bodega.setTELEFONO(rs.getString("TELEFONO"));
-                bodega.setID_USUARIO_CARGO(rs.getString("ID_USUARIO_CARGO"));
+                bodega.setID_USUARIO_CARGO(rs.getInt("ID_USUARIO_CARGO"));
                 list.add(bodega);  //añade el objeto temporal en la lista
             }
         } catch (Exception e) {
@@ -69,30 +68,28 @@ public class bodega_sucursalImp implements bodega_sucursalDao{
         boolean save = true;        //bandera para indicar si se almacenaron los cambios
         
         try {
-            if (bodega.getID_BODEGA() == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo 
+            if (bodega. getID_BODEGA_SUCURSAL() == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo 
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
-                sql.append("INSERT INTO [dbo].[BODEGA_SUCURSAL]\n" +
-"           ([ID_BODEGA]\n" +
-"           ,[RUC_SUCURSAL]\n" +
+                sql.append("INSERT INTO [dbo].[BODEGA_SUCURSAL](\n" +
+"           [RUC_SUCURSAL]\n" +
 "           ,[NOMBRE]\n" +
 "           ,[DIRECCION]\n" +
 "           ,[TELEFONO]\n" +
 "           ,[ID_USUARIO_CARGO])\n" +
-"     VALUES(").append(bodega.getID_BODEGA());
-                 sql.append(", '").append(bodega.getRUC_SUCURSAL());
+"     VALUES('").append(bodega.getRUC_SUCURSAL());
                  sql.append("', '").append(bodega.getNOMBRE()); 
                  sql.append("', '").append(bodega.getDIRECCION()); 
                  sql.append("', '").append(bodega.getTELEFONO()); 
-                 sql.append("', '").append(bodega.getID_USUARIO_CARGO()).append("')");      //crear la cadena de conexion
+                 sql.append("', ").append(bodega.getID_USUARIO_CARGO()).append(")");      //crear la cadena de conexion
                 this.conn.execute(sql.toString());      //ejecuta la query
             } else {   //es un registro previamente existente: estamos actualizando
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
-                sql.append("UPDATE [[dbo].[BODEGA_SUCURSAL] SET [ID_BODEGA] = ").append(bodega.getID_BODEGA());
+                sql.append("UPDATE [dbo].[BODEGA_SUCURSAL] SET [ID_BODEGA] = ").append(bodega.getID_BODEGA_SUCURSAL());
                 sql.append(", [RUC_SUCURSAL] = ").append(bodega.getRUC_SUCURSAL());
                 sql.append(", [NOMBRE] = '").append(bodega.getNOMBRE());
                 sql.append("', [DIRECCION] = '").append(bodega.getDIRECCION());
                 sql.append("', [TELEFONO] = '").append(bodega.getTELEFONO());
-                sql.append("', [ID_USUARIO_CARGO] =").append(bodega.getID_USUARIO_CARGO()).append(" WHERE [ID_BODEGA] = ").append(bodega.getID_BODEGA()); 
+                sql.append("', [ID_USUARIO_CARGO] =").append(bodega.getID_USUARIO_CARGO()).append(" WHERE [ID_BODEGA] = ").append(bodega.getID_BODEGA_SUCURSAL()); 
                 
 //crear la cadena de conexion
                    //crear la cadena de conexion
@@ -147,7 +144,7 @@ public class bodega_sucursalImp implements bodega_sucursalDao{
                 bodega.setNOMBRE(rs.getString("NOMBRE"));
                 bodega.setDIRECCION(rs.getString("DIRECCION"));
                 bodega.setTELEFONO(rs.getString("TELEFONO"));
-                bodega.setID_USUARIO_CARGO(rs.getString("ID_USUARIO_CARGO"));
+                bodega.setID_USUARIO_CARGO(rs.getInt("ID_USUARIO_CARGO"));
             }
         } catch (Exception e) {
             
@@ -155,8 +152,5 @@ public class bodega_sucursalImp implements bodega_sucursalDao{
             this.conn.close();          //cierra la conexion
         }
         return bodega;             //devuelve el objeto creado
-    }
->>>>>>> bfd62425c4f0c22b5b568849f0dd8e022a484716
-    
-    
+    }   
 }

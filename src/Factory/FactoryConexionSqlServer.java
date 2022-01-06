@@ -35,7 +35,7 @@ public final class FactoryConexionSqlServer extends  ConnectionDb {
         String urlDatos = "jdbc:sqlserver://localhost:1433;"
               + "database=retinvtDB;"
                +"user=stalindb;"
-               +"password= 12345;"
+               +"password= 1234;"
                +"loginTimeout=30;"; 
         try{
           Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
