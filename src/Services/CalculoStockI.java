@@ -8,7 +8,7 @@ package Services;
  *
  * @author PIERO
  */
-public interface CalculoStock {
+public interface CalculoStockI {
     
     public int StockMinimo();
     public int StockMinSeguridad();

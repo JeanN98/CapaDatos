@@ -14,7 +14,7 @@ import model.bodega_sucursal;
  *
  * @author PIERO
  */
-public class GestionarSucursalBodega {
+public class GestionarSucursalBodegaImp {
     
     //private usuario_cargo admin ;
     
@@ -23,7 +23,7 @@ public class GestionarSucursalBodega {
     //objeto del almacen a crear
     private bodega_sucursal bodega;
     
-    public void CrearNuevaSucBod(bodega_sucursal sucursal,usuario_cargo admin){
+    public boolean CrearNuevaSucBod(bodega_sucursal sucursal,usuario_cargo admin){
     
         boolean aux= false;
         
@@ -34,6 +34,7 @@ public class GestionarSucursalBodega {
                 almacen = new bodega_sucursalImp ();
                 
                 almacen.save(sucursal);
+                aux = true;
                 
             }else{
                 throw new Exception("El usuario debe ser administrador para crear un almacen ");
@@ -41,7 +42,7 @@ public class GestionarSucursalBodega {
         } catch (Exception e) {
            
         }
-        
+        return aux;
         
     }
     
@@ -81,9 +82,9 @@ public class GestionarSucursalBodega {
         return bodega;
     }
     
-     public void ModSucBod(usuario_cargo admin,String Ruc){
+     public boolean ModSucBod(usuario_cargo admin,String Ruc){
     
-        
+        boolean aux= false;
         
         try {
             //VALIDAR REGLAS NEGOCIO
@@ -114,7 +115,7 @@ public class GestionarSucursalBodega {
             almacen = new bodega_sucursalImp ();
                 
             almacen.edit(BuscarSucBod(admin,Ruc).getID_BODEGA_SUCURSAL());
-                
+               aux= true;
                 
             }else{
                 throw new Exception("El usuario debe ser administrador para crear un almacen ");
@@ -123,11 +124,12 @@ public class GestionarSucursalBodega {
            
         }
                 
+        return aux;
     }
      
-      public void EliminarSucBod(usuario_cargo admin,String Ruc){
+      public boolean EliminarSucBod(usuario_cargo admin,String Ruc){
     
-        
+        boolean aux= false;
         
         try {
             //VALIDAR REGLAS NEGOCIO
@@ -158,7 +160,8 @@ public class GestionarSucursalBodega {
             almacen = new bodega_sucursalImp ();
                 
             almacen.delete(BuscarSucBod(admin,Ruc).getID_BODEGA_SUCURSAL());
-                
+               
+            aux= true;
                 
             }else{
                 throw new Exception("El usuario debe ser administrador para crear un almacen ");
@@ -166,6 +169,8 @@ public class GestionarSucursalBodega {
         } catch (Exception e) {
            
         }
+        
+        return aux;
                 
     }
 }

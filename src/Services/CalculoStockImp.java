@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author PIERO
  */
-public class CalculoStockImp implements CalculoStock{
+public class CalculoStockImp implements CalculoStockI{
     
     CalculoStockImp(){}
     
