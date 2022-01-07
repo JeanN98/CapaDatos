@@ -132,7 +132,7 @@ public class bodega_sucursalImp implements bodega_sucursalDao{
        bodega_sucursal bodega = new bodega_sucursal();
         
         StringBuilder sql = new StringBuilder();    //para almacenar la consulta e efectuar en la bd
-        sql.append("SELECT * FROM kardex WHERE ID_BODEGA = ").append(id);   //cadena de consulta
+        sql.append("SELECT * FROM [dbo].[BODEGA_SUCURSAL] WHERE ID_BODEGA = ").append(id);   //cadena de consulta
         
         try {
             ResultSet rs = this.conn.query(sql.toString());  //carga todos los registros que cumplen con la condicion del sql
