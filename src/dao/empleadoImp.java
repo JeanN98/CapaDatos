@@ -88,12 +88,12 @@ public class empleadoImp implements empleadoDao {
                               
               
                 sql.append("INSERT INTO [dbo].[EMPLEADO] ([CI_EMPLEADO] ,[NOMBRE] ,[DIRECCION] ,[FECHA_INICIO] ,[FECHA_FINAL] ,[ID_BODEGA]) VALUES (");
-                sql.append("', '").append(empleado.getCI_EMPLEADO());      //crear la cadena de conexion
+                sql.append(" '").append(empleado.getCI_EMPLEADO());      //crear la cadena de conexion
                 sql.append("', '").append(empleado.getNOMBRE());      //crear la cadena de conexion
                 sql.append("', '").append(empleado.getDIRECCION());      //crear la cadena de conexion
                 sql.append("', '").append(empleado.getFECHA_INICIO());      //crear la cadena de conexion
                 sql.append("', '").append(empleado.getFECHA_FINAL());      //crear la cadena de conexion
-                sql.append("', '").append(empleado.getID_BODEGA()).append("')");      //crear la cadena de conexion
+                sql.append("', ").append(empleado.getID_BODEGA()).append(")");      //crear la cadena de conexion
                 this.conn.execute(sql.toString());      //ejecuta la query
             } else {   //es un registro previamente existente: estamos actualizando
                              

@@ -22,12 +22,13 @@ public class empleado {
      public empleado (){
      
      }
-    public empleado(String CI_EMPLEADO, String NOMBRE, String DIRECCION, String FECHA_INICIO, String FECHA_FINAL) {
+    public empleado(String CI_EMPLEADO, String NOMBRE, String DIRECCION, String FECHA_INICIO, String FECHA_FINAL, int ID_BODEGA) {
         this.CI_EMPLEADO = CI_EMPLEADO;
         this.NOMBRE = NOMBRE;
         this.DIRECCION = DIRECCION;
         this.FECHA_INICIO = FECHA_INICIO;
         this.FECHA_FINAL = FECHA_FINAL;
+        this.ID_BODEGA = ID_BODEGA;
     }
 
     public empleado(int ID_EMPLEADO, String CI_EMPLEADO, String NOMBRE, String DIRECCION, String FECHA_INICIO, String FECHA_FINAL, int ID_BODEGA) {
