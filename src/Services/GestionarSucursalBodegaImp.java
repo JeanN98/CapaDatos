@@ -82,6 +82,8 @@ public class GestionarSucursalBodegaImp {
         return bodega;
     }
     
+    
+    
      public boolean ModSucBod(usuario_cargo admin,String Ruc){
     
         boolean aux= false;

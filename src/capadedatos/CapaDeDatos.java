@@ -48,6 +48,7 @@ public class CapaDeDatos {
         //empleImp.regsitrarEmpleado();
        // empleImp.listarEmpleados();
        // empleImp.modificarEmpleados();
+         empleImp.buscarEmpleado();
         
     }
     
