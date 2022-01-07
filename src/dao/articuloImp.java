@@ -46,7 +46,7 @@ public class articuloImp implements articuloDao {
                 articulo.setID_BODEGA(rs.getInt("ID_BODEGA"));
                 articulo.setNOMBRE(rs.getString("NOMBRE"));
                 articulo.setPRECIO_UNITARIO(rs.getFloat("PRECIO_TOTAL"));
-                articulo.setFECHA_CADUCIDAD(rs.getFloat("FECHA_CADUCIDAD"));
+                articulo.setFECHA_CADUCIDAD(rs.getString("FECHA_CADUCIDAD"));
                 articulo.setSTOCK(rs.getFloat("STOCK"));
                 articulo.setDESCRIPCION(rs.getString("DESCRIPCION"));
                 articulo.setCODIGO_BARRA(rs.getString("CODIGO_BARRA"));
@@ -157,7 +157,7 @@ public class articuloImp implements articuloDao {
                 articulo.setCODIGO_BARRA(rs.getString("CODIGO_BARRA"));
                 articulo.setNOMBRE(rs.getString("NOMBRE"));
                 articulo.setPRECIO_UNITARIO(rs.getFloat("PRECIO_TOTAL"));
-                articulo.setFECHA_CADUCIDAD(rs.getFloat("FECHA_CADUCIDAD"));
+                articulo.setFECHA_CADUCIDAD(rs.getString("FECHA_CADUCIDAD"));
                 articulo.setSTOCK(rs.getFloat("STOCK"));
                 articulo.setDESCRIPCION(rs.getString("DESCRIPCION"));
       

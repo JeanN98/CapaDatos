@@ -16,7 +16,7 @@ public class articulo {
     private String CODIGO_BARRA;
     private String NOMBRE;
     private float PRECIO_TOTAL;
-    private float FECHA_CADUCIDAD;
+    private String FECHA_CADUCIDAD;
     private float STOCK;
     private String DESCRIPCION;
     private String NOMBRE_CATEGORIA;
@@ -25,7 +25,7 @@ public class articulo {
     private String CODIGO_BARRA_DETALLE;
     private String DESCIPCION_DETALLE;
 
-    public articulo(int ID_ARTICULO, int ID_CATEGORIA, int ID_BODEGA, String CODIGO_BARRA, String NOMBRE, float PRECIO_TOTAL, float FECHA_CADUCIDAD, float STOCK, String DESCRIPCION, String NOMBRE_CATEGORIA, String DESCRIPCION_CATEGORIA, float PRECIO_UNITARIO, String CODIGO_BARRA_DETALLE, String DESCIPCION_DETALLE) {
+    public articulo(int ID_ARTICULO, int ID_CATEGORIA, int ID_BODEGA, String CODIGO_BARRA, String NOMBRE, float PRECIO_TOTAL, String FECHA_CADUCIDAD, float STOCK, String DESCRIPCION, String NOMBRE_CATEGORIA, String DESCRIPCION_CATEGORIA, float PRECIO_UNITARIO, String CODIGO_BARRA_DETALLE, String DESCIPCION_DETALLE) {
         this.ID_ARTICULO = ID_ARTICULO;
         this.ID_CATEGORIA = ID_CATEGORIA;
         this.ID_BODEGA = ID_BODEGA;
@@ -89,11 +89,11 @@ public class articulo {
         this.PRECIO_TOTAL = PRECIO_TOTAL;
     }
 
-    public float getFECHA_CADUCIDAD() {
+    public String getFECHA_CADUCIDAD() {
         return FECHA_CADUCIDAD;
     }
 
-    public void setFECHA_CADUCIDAD(float FECHA_CADUCIDAD) {
+    public void setFECHA_CADUCIDAD(String FECHA_CADUCIDAD) {
         this.FECHA_CADUCIDAD = FECHA_CADUCIDAD;
     }
 

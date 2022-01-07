@@ -4,6 +4,8 @@
  */
 package capadedatos;
 
+import Services.empleadoService;
+import Services.empleadoServiceImp;
 import dao.bodega_sucursalDao;
 import dao.bodega_sucursalImp;
 import dao.empleadoDao;
@@ -32,15 +34,20 @@ public class CapaDeDatos {
         
       //  bodega_sucursal  bode = new bodega_sucursal(0,"06001100202", "sucursal1", "av siempre viva", "0959440770", 1);
        // bodega_sucursalDao bodeDao = new bodega_sucursalImp();
-        empleado emple = new empleado("0602963233", "Darwin", "Av Alborada del sur ", "29-12-2021", "01-01-2022", 1);
-        empleadoDao empleDao = new empleadoImp();
+       // empleado emple = new empleado("0602963233", "Darwin", "Av Alborada del sur ", "29-12-2021", "01-01-2022", 1);
+       // empleadoDao empleDao = new empleadoImp();
         //empleado emple = new empleado("0605816602", "STALIN" ,"av. siempre viva", "14-10-2020", "12-11-2021");
        // empleadoDao empleDao = new empleadoImp();
         
         
-        empleDao.save(emple);
+       // empleDao.save(emple);
        //bodeDao.save(bode);
         //empleDao.save(emple);
+        
+        empleadoService empleImp = new empleadoServiceImp();
+        //empleImp.regsitrarEmpleado();
+       // empleImp.listarEmpleados();
+       // empleImp.modificarEmpleados();
         
     }
     
