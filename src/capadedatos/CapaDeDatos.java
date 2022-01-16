@@ -4,6 +4,10 @@
  */
 package capadedatos;
 
+import Services.CalculoStockI;
+import Services.CalculoStockImp;
+import Services.GestionarSucursalBodegaI;
+import Services.GestionarSucursalBodegaImp;
 import Services.empleadoService;
 import Services.empleadoServiceImp;
 import dao.bodega_sucursalDao;
@@ -49,6 +53,34 @@ public class CapaDeDatos {
        // empleImp.listarEmpleados();
        // empleImp.modificarEmpleados();
          empleImp.buscarEmpleado();
+         
+         bodega_sucursal sucursal = new bodega_sucursal();
+         usuario_cargo admin =  new usuario_cargo(); 
+         
+         admin.setCI_USUARIO_CARGO("0504829904");
+         admin.setCONTRACENIA("1234");
+         admin.setDIRECCION("ambato");
+         admin.setROl(1);
+         
+        CalculoStockI pruebaC;
+       pruebaC = new CalculoStockImp();
+       pruebaC.StockMinimo();
+       pruebaC.StockMinSeguridad();
+       pruebaC.StockSeguridad();
+       pruebaC.StockMaximo();
+       
+       GestionarSucursalBodegaI bodega = new GestionarSucursalBodegaImp();
+       
+      if( bodega.CrearNuevaSucBod(sucursal, admin)==true)
+          System.out.println("true");
+      if( bodega.ModSucBod(admin, "0504829904")==true)
+          System.out.println("true"); 
+      
+      
+      System.out.println(bodega.BuscarSucBod(admin, "0504829904").getNOMBRE());
+       
+         
+         
         
     }
     

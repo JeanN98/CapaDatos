@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class CalculoStockImp implements CalculoStockI{
     
-    CalculoStockImp(){}
+   
     
     //Stock Máximo = (Tiempo de Entrega Habitual del Proveedor) x (Consumo Promedio) + Stock Mínimo = Stock Mínimo * 2
     
@@ -24,7 +24,7 @@ public class CalculoStockImp implements CalculoStockI{
     
     //Stock de Seguridad = Stock Mínimo + Mínimo de Seguridad,
     
-    
+    @Override
     public int StockMinimo(){
     
         Scanner in = new Scanner(System.in);
@@ -46,7 +46,7 @@ public class CalculoStockImp implements CalculoStockI{
     
     }
     
-    
+    @Override
     public int StockMinSeguridad(){
     
         Scanner in = new Scanner(System.in);
@@ -70,13 +70,13 @@ public class CalculoStockImp implements CalculoStockI{
        return  (TAbasRetraso - TAbas) * Consumo;        
     
     }
-    
+    @Override
     public int StockSeguridad(){    
        
        return  StockMinSeguridad()+ StockMinimo();       
     
     }
-    
+    @Override
     public int StockMaximo(){
     
     return StockMinimo() *2;
