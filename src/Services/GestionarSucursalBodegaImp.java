@@ -14,7 +14,7 @@ import model.bodega_sucursal;
  *
  * @author PIERO
  */
-public class GestionarSucursalBodegaImp {
+public class GestionarSucursalBodegaImp implements GestionarSucursalBodegaI {
     
     //private usuario_cargo admin ;
     
@@ -23,6 +23,10 @@ public class GestionarSucursalBodegaImp {
     //objeto del almacen a crear
     private bodega_sucursal bodega;
     
+    
+    
+    
+    @Override
     public boolean CrearNuevaSucBod(bodega_sucursal sucursal,usuario_cargo admin){
     
         boolean aux= false;
@@ -47,7 +51,7 @@ public class GestionarSucursalBodegaImp {
     }
     
     
-    
+    @Override
     public bodega_sucursal BuscarSucBod(usuario_cargo admin,String Ruc){
         
  
@@ -83,7 +87,7 @@ public class GestionarSucursalBodegaImp {
     }
     
     
-    
+    @Override
      public boolean ModSucBod(usuario_cargo admin,String Ruc){
     
         boolean aux= false;
@@ -128,7 +132,7 @@ public class GestionarSucursalBodegaImp {
                 
         return aux;
     }
-     
+     @Override
       public boolean EliminarSucBod(usuario_cargo admin,String Ruc){
     
         boolean aux= false;
