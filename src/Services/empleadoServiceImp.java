@@ -20,6 +20,7 @@ import model.empleado;
 public class empleadoServiceImp implements empleadoService {
     
     public  Scanner sc = new Scanner(System.in);
+    public ValidacionCedula ValidarCedula = new ValidacionCedula();
     
     @Override
     public void regsitrarEmpleado() {
@@ -28,7 +29,9 @@ public class empleadoServiceImp implements empleadoService {
         String Direccion;
         String FechaInicio;
         String FechaFin;
-        System.out.println("Porfavor Inserta los datos del nuevo empleado a ingresar\n");
+        
+        System.out.println("Porfavor Inserta los datos del nuevo empleado a modificar");
+        
         System.out.println("Cedula:");
         CI= sc.nextLine();
         System.out.println("Nombre");
@@ -43,9 +46,13 @@ public class empleadoServiceImp implements empleadoService {
         
         
         try {
+            if (ValidarCedula.ValidarCedula(CI)){
         empleado emple = new empleado(CI, Nombre, Direccion, FechaInicio, FechaFin, 1);
         empleadoDao empleDao = new empleadoImp();
         empleDao.save(emple);
+            }else {
+                System.out.println("Datos no insertados, la cédula ingresada no es válida");
+            }
         }catch(Exception e){
             System.out.println("Error al insertar los datos");
         }
@@ -69,20 +76,45 @@ public class empleadoServiceImp implements empleadoService {
         empleadoDao empleDao = new empleadoImp();
         for (int i=0; i< (empleDao.list()).size(); i++){
             empleado e = (empleDao.list()).get(i);
-            System.out.println(e.getCI_EMPLEADO() + e.getNOMBRE() + e.getDIRECCION() + e.getFECHA_INICIO()+ e.getFECHA_FINAL());
+            System.out.println(e.getID_EMPLEADO()+" "+ e.getCI_EMPLEADO() + " "+  e.getNOMBRE() + " "+ e.getDIRECCION() + " "+  e.getFECHA_INICIO()+ " "+ e.getFECHA_FINAL());
         }
     }
     
     @Override
     public void modificarEmpleados() {
         int id_empleado;
-       
-        System.out.println("Please enter the id empleado");
+        String CI;
+        String Nombre;
+        String Direccion;
+        String FechaInicio;
+        String FechaFin;
+        System.out.println("Porfavr ingrese el  id empleado a modificar");
         id_empleado = sc.nextInt();
         
-        empleado emple = new empleado ("0602963293", "Darwin4", "Av Alborada del sur9 ", "29-12-2021", "01-01-2022", 1);
+        
+        System.out.println("Porfavor Inserta los nuevos datos \n");
+        System.out.println("Cedula:");
+        CI= sc.nextLine();
+        System.out.println("Nombre");
+        Nombre= sc.nextLine();
+        System.out.println("Direccion");
+        Direccion= sc.nextLine();
+        System.out.println("FecgaInicio");
+        FechaInicio = sc.nextLine();
+        System.out.println("FechaFin");
+        FechaFin= sc.nextLine();
+        
+          try {
+            if (ValidarCedula.ValidarCedula(CI)){
+        empleado emple = new empleado (CI, Nombre, Direccion, FechaInicio, FechaFin, 1);
         empleadoDao empleDao = new empleadoImp();
         empleDao.edit(id_empleado);
+            }else{
+                System.out.println("Datos no insertados, la cédula ingresada no es válida");
+            }
+        }catch(Exception e){
+            System.out.println("Error al insertar los datos");
+        }
     }
     
     @Override 
@@ -108,10 +140,10 @@ public class empleadoServiceImp implements empleadoService {
                     if (listaEmpleado.get(i).getCI_EMPLEADO().contains(ci_empleado)){
                         emple = listaEmpleado.get(i);
                         System.out.println("El empleado se ha encontrado con exito");
-                        System.out.println(emple.getCI_EMPLEADO() + emple.getNOMBRE() + emple.getDIRECCION() + emple.getFECHA_INICIO()+ emple.getFECHA_FINAL());
+                        System.out.println(emple.getID_EMPLEADO()+" "+ emple.getCI_EMPLEADO() + " "+  emple.getNOMBRE() + " "+ emple.getDIRECCION() + " "+  emple.getFECHA_INICIO()+ " "+ emple.getFECHA_FINAL());
                     }
                     else{
-                         throw new Exception("no se encontro el ruc ");                        
+                         throw new Exception("no se encontro un empleado con ese CI ");                        
                     }                                   
                 }
                 
@@ -123,4 +155,7 @@ public class empleadoServiceImp implements empleadoService {
        
         
     }
+    
+
+    
 }

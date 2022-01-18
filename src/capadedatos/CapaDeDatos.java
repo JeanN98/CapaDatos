@@ -4,6 +4,7 @@
  */
 package capadedatos;
 
+import Services.GestionarSucursalBodegaImp;
 import Services.empleadoService;
 import Services.empleadoServiceImp;
 import dao.bodega_sucursalDao;
@@ -45,10 +46,14 @@ public class CapaDeDatos {
         //empleDao.save(emple);
         
         empleadoService empleImp = new empleadoServiceImp();
-        //empleImp.regsitrarEmpleado();
-       // empleImp.listarEmpleados();
-       // empleImp.modificarEmpleados();
-         empleImp.buscarEmpleado();
+        bodega_sucursal sucursal = new bodega_sucursal ();
+        
+
+       //empleImp.regsitrarEmpleado();
+       empleImp.listarEmpleados();
+       empleImp.buscarEmpleado();
+       empleImp.modificarEmpleados();
+       
         
     }
     
