@@ -15,18 +15,16 @@ public class articulo {
     private int	ID_BODEGA;
     private String CODIGO_BARRA;
     private String NOMBRE;
+    private float STOCK;
+    private float PRECIO_UNITARIO;
     private float PRECIO_TOTAL;
     private String FECHA_CADUCIDAD;
-    private float STOCK;
     private String DESCRIPCION;
-    private String NOMBRE_CATEGORIA;
-    private String DESCRIPCION_CATEGORIA;
-    private float PRECIO_UNITARIO;
-    private String CODIGO_BARRA_DETALLE;
-    private String DESCIPCION_DETALLE;
+    private String ESTADO;
+    private String UNIDAD_MEDIDA;
 
-    public articulo(int ID_ARTICULO, int ID_CATEGORIA, int ID_BODEGA, String CODIGO_BARRA, String NOMBRE, float PRECIO_TOTAL, String FECHA_CADUCIDAD, float STOCK, String DESCRIPCION, String NOMBRE_CATEGORIA, String DESCRIPCION_CATEGORIA, float PRECIO_UNITARIO, String CODIGO_BARRA_DETALLE, String DESCIPCION_DETALLE) {
-        this.ID_ARTICULO = ID_ARTICULO;
+    public articulo( int ID_CATEGORIA, int ID_BODEGA, String CODIGO_BARRA, String NOMBRE, float PRECIO_TOTAL, String FECHA_CADUCIDAD, float STOCK, String DESCRIPCION, float PRECIO_UNITARIO, String ESTADO, String UNIDAD_MEDIDA) {
+       
         this.ID_CATEGORIA = ID_CATEGORIA;
         this.ID_BODEGA = ID_BODEGA;
         this.CODIGO_BARRA = CODIGO_BARRA;
@@ -35,14 +33,13 @@ public class articulo {
         this.FECHA_CADUCIDAD = FECHA_CADUCIDAD;
         this.STOCK = STOCK;
         this.DESCRIPCION = DESCRIPCION;
-        this.NOMBRE_CATEGORIA = NOMBRE_CATEGORIA;
-        this.DESCRIPCION_CATEGORIA = DESCRIPCION_CATEGORIA;
         this.PRECIO_UNITARIO = PRECIO_UNITARIO;
-        this.CODIGO_BARRA_DETALLE = CODIGO_BARRA_DETALLE;
-        this.DESCIPCION_DETALLE = DESCIPCION_DETALLE;
+        this.ESTADO= ESTADO;
+        this.UNIDAD_MEDIDA= UNIDAD_MEDIDA;
+        
     }
 
-    
+
     
     
     public articulo() {
@@ -121,22 +118,6 @@ public class articulo {
         this.CODIGO_BARRA = CODIGO_BARRA;
     }
 
-    public String getNOMBRE_CATEGORIA() {
-        return NOMBRE_CATEGORIA;
-    }
-
-    public void setNOMBRE_CATEGORIA(String NOMBRE_CATEGORIA) {
-        this.NOMBRE_CATEGORIA = NOMBRE_CATEGORIA;
-    }
-
-    public String getDESCRIPCION_CATEGORIA() {
-        return DESCRIPCION_CATEGORIA;
-    }
-
-    public void setDESCRIPCION_CATEGORIA(String DESCRIPCION_CATEGORIA) {
-        this.DESCRIPCION_CATEGORIA = DESCRIPCION_CATEGORIA;
-    }
-
     public float getPRECIO_UNITARIO() {
         return PRECIO_UNITARIO;
     }
@@ -144,22 +125,24 @@ public class articulo {
     public void setPRECIO_UNITARIO(float PRECIO_UNITARIO) {
         this.PRECIO_UNITARIO = PRECIO_UNITARIO;
     }
-
-    public String getCODIGO_BARRA_DETALLE() {
-        return CODIGO_BARRA_DETALLE;
+        public String getESTADO() {
+        return ESTADO;
     }
 
-    public void setCODIGO_BARRA_DETALLE(String CODIGO_BARRA_DETALLE) {
-        this.CODIGO_BARRA_DETALLE = CODIGO_BARRA_DETALLE;
+    public void setESTADO(String ESTADO) {
+        this.ESTADO = ESTADO;
     }
 
-    public String getDESCIPCION_DETALLE() {
-        return DESCIPCION_DETALLE;
+    public String getUNIDAD_MEDIDA() {
+        return UNIDAD_MEDIDA;
     }
 
-    public void setDESCIPCION_DETALLE(String DESCIPCION_DETALLE) {
-        this.DESCIPCION_DETALLE = DESCIPCION_DETALLE;
+    public void setUNIDAD_MEDIDA(String UNIDAD_MEDIDA) {
+        this.UNIDAD_MEDIDA = UNIDAD_MEDIDA;
     }
+
     
+
+   
     
 }

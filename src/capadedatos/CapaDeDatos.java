@@ -4,12 +4,10 @@
  */
 package capadedatos;
 
-<<<<<<< HEAD
-=======
+
 import Services.CalculoStockI;
 import Services.CalculoStockImp;
 import Services.GestionarSucursalBodegaI;
->>>>>>> 204b3ccfedd9e29de27a34360caf309d7546f1f1
 import Services.GestionarSucursalBodegaImp;
 import Services.empleadoService;
 import Services.empleadoServiceImp;
@@ -52,7 +50,7 @@ public class CapaDeDatos {
         //empleDao.save(emple);
         
         empleadoService empleImp = new empleadoServiceImp();
-<<<<<<< HEAD
+
         bodega_sucursal sucursal = new bodega_sucursal ();
         
 
@@ -61,13 +59,13 @@ public class CapaDeDatos {
        empleImp.buscarEmpleado();
        empleImp.modificarEmpleados();
        
-=======
+
         //empleImp.regsitrarEmpleado();
        // empleImp.listarEmpleados();
        // empleImp.modificarEmpleados();
          empleImp.buscarEmpleado();
          
-         bodega_sucursal sucursal = new bodega_sucursal();
+       //  bodega_sucursal sucursal = new bodega_sucursal();
          usuario_cargo admin =  new usuario_cargo(); 
          
          admin.setCI_USUARIO_CARGO("0504829904");
@@ -94,7 +92,7 @@ public class CapaDeDatos {
        
          
          
->>>>>>> 204b3ccfedd9e29de27a34360caf309d7546f1f1
+
         
     }
     

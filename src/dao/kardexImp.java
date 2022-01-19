@@ -39,7 +39,7 @@ public class kardexImp implements kardexDao {
                 kardex kardex = new kardex();  
               
                 kardex.setID_EMPLEADO(rs.getInt("ID_EMPLEADO")); 
-                kardex.setID_DETALLE(rs.getInt("ID_DETALLE"));
+                kardex.setID_ARTICULO(rs.getInt("ID_ARTICULO"));
                 kardex.setFECHA_REGISTRO(rs.getString("FECHA_REGISTRO"));
                 kardex.setDESCRIPCION(rs.getString("DESCRIPCION"));
                 kardex.setCANTIDAD(rs.getFloat("CANTIDAD"));
@@ -102,7 +102,7 @@ public class kardexImp implements kardexDao {
 "           ,[TIPO]\n" +
 "           ,[SALDO])"
             + " VALUES ('").append(kardex.getID_EMPLEADO());
-                sql.append("', '").append(kardex.getID_DETALLE());      //crear la cadena de conexion
+                sql.append("', '").append(kardex.getID_ARTICULO());      //crear la cadena de conexion
                 sql.append("', '").append(kardex.getFECHA_REGISTRO());      //crear la cadena de conexion
                 sql.append("', '").append(kardex.getDESCRIPCION());      //crear la cadena de conexion
                 sql.append("', '").append(kardex.getCANTIDAD());  

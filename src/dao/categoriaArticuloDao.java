@@ -6,19 +6,15 @@
 package dao;
 
 import java.util.List;
-import model.articulo;
+import model.categoriaArticulo;
 
 /**
  *
  * @author Stalin
  */
-public interface articuloDao {
-
-    
-    public List<articulo> list();    //prototipo metodo listar
-    public articulo edit(int id);    //prototipo metodo editar
-    public boolean save (articulo articulo);   //prototipo metodo guardar
+public interface categoriaArticuloDao {
+    public List<categoriaArticulo> list();    //prototipo metodo listar
+    public categoriaArticulo edit(int id);    //prototipo metodo editar
+    public boolean save (categoriaArticulo categoria);
     public boolean delete(int id);      //protot
-  
-
 }

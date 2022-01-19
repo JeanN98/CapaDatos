@@ -12,7 +12,7 @@ package model;
 public class kardex {
        private int ID_KARDEX;
        private int ID_EMPLEADO;
-       private int ID_DETALLE; 
+       private int ID_ARTICULO; 
        private String FECHA_REGISTRO;
        private String DESCRIPCION;
        private float CANTIDAD;
@@ -20,10 +20,10 @@ public class kardex {
        private String TIPO;
        private float SALDO; 
 
-    public kardex(int ID_KARDEX, int ID_EMPLEADO, int ID_DETALLE, String FECHA_REGISTRO, String DESCRIPCION, float CANTIDAD, float PRECIO_TOTAL, String TIPO, float SALDO) {
-        this.ID_KARDEX = ID_KARDEX;
+    public kardex( int ID_EMPLEADO, int ID_ARTICULO, String FECHA_REGISTRO, String DESCRIPCION, float CANTIDAD, float PRECIO_TOTAL, String TIPO, float SALDO) {
+     
         this.ID_EMPLEADO = ID_EMPLEADO;
-        this.ID_DETALLE = ID_DETALLE;
+        this.ID_ARTICULO = ID_ARTICULO;
         this.FECHA_REGISTRO = FECHA_REGISTRO;
         this.DESCRIPCION = DESCRIPCION;
         this.CANTIDAD = CANTIDAD;
@@ -46,8 +46,8 @@ public class kardex {
         this.ID_EMPLEADO = ID_EMPLEADO;
     }
 
-    public void setID_DETALLE(int ID_DETALLE) {
-        this.ID_DETALLE = ID_DETALLE;
+    public void setID_ARTICULO(int ID_ARTICULO) {
+        this.ID_ARTICULO = ID_ARTICULO;
     }
 
     public void setFECHA_REGISTRO(String FECHA_REGISTRO) {
@@ -79,8 +79,8 @@ public class kardex {
         return ID_EMPLEADO;
     }
 
-    public int getID_DETALLE() {
-        return ID_DETALLE;
+    public int getID_ARTICULO() {
+        return ID_ARTICULO;
     }
 
     public String getFECHA_REGISTRO() {
