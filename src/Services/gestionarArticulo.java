@@ -5,6 +5,8 @@
  */
 package Services;
 
+import model.articulo;
+
 /**
  *
  * @author Stalin
@@ -14,7 +16,7 @@ public interface gestionarArticulo {
     public void regsitrarArticulo();
     public void eliminarArticulo();
     public void listarArticulo();
-    public void modificarArticulo();
-    public void buscarArticulo();
+    public void modificarArticulo(articulo articulo);
+    public articulo buscarArticulo(int Id_Articulo);
     
 }

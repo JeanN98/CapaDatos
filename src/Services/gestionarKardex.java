@@ -10,7 +10,7 @@ package Services;
  * @author Stalin
  */
 public interface gestionarKardex {
-    public void regsitrarKardex();
+    public void regsitrarKardex(int ID_EMPLEADO, int ID_ARTICULO, String DESCRIPCION, float CANTIDAD , float PRECIO_TOTAL, String TIPO, float SALDO);
     public void eliminarKardex();
     public void listarKardex();
     public void modificarKardex();

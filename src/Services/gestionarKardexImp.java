@@ -7,6 +7,7 @@ package Services;
 
 import dao.kardexDao;
 import dao.kardexImp;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import model.kardex;
@@ -29,11 +30,13 @@ public class gestionarKardexImp implements gestionarKardex{
 
 
     @Override
-    public void regsitrarKardex() {
+    public void regsitrarKardex(int ID_EMPLEADO, int ID_ARTICULO, String DESCRIPCION, float CANTIDAD , float PRECIO_TOTAL, String TIPO, float SALDO) {
        
-        
+        Date fecha_actual = new Date(System.currentTimeMillis());
         try {
-       kardex kardex = new kardex (ID_EMPLEADO,ID_ARTICULO,  FECHA_REGISTRO,  DESCRIPCION,  CANTIDAD,  PRECIO_TOTAL, TIPO,  SALDO);
+            
+            
+       kardex kardex = new kardex (ID_EMPLEADO,ID_ARTICULO,fecha_actual.toString(), DESCRIPCION,  CANTIDAD,  PRECIO_TOTAL, TIPO,  SALDO);
        kardexDao kardexDao = new  kardexImp();
         kardexDao.save(kardex);
         }catch (Exception e){

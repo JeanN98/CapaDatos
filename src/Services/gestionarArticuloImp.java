@@ -66,15 +66,17 @@ Scanner sc = new Scanner(System.in);
           
         }
     }
+     
+    
+    
 
     @Override
-    public void modificarArticulo() {
-        int id_articulo=0;
+    public void modificarArticulo(articulo articulo) {
+       
           try {
-    
-        articulo art = new articulo ();
+            
        articuloDao artDao = new articuloImp();
-        artDao.edit(id_articulo);
+        artDao.edit(articulo.getID_ARTICULO());
            
         }catch(Exception e){
             System.out.println("Error al insertar los datos");
@@ -82,17 +84,14 @@ Scanner sc = new Scanner(System.in);
     }
 
     @Override
-    public void buscarArticulo() {
-        String codigo_articulo; 
-         
+    public articulo buscarArticulo(int Id_Articulo ) {
+                 
         articulo art = new articulo ();
           articuloDao artDao  = null;
         
-        System.out.println("Porfavor ingresa el numero de cedula del empleado a buscar:");
-         codigo_articulo = sc.nextLine();
+        
         try {
-            //VALIDAR REGLAS NEGOCIO
-  
+            //VALIDAR REGLAS NEGOCIO  
               
                 artDao = new articuloImp();
                 
@@ -101,10 +100,11 @@ Scanner sc = new Scanner(System.in);
                 for(int i=0; i< listaArticulo.size();i++)
                 {
                 
-                    if (listaArticulo.get(i).getCODIGO_BARRA().contains(codigo_articulo)){
+                    if (listaArticulo.get(i).getID_ARTICULO()==Id_Articulo){
                          art = listaArticulo.get(i);
                         System.out.println("El empleado se ha encontrado con exito");
                         System.out.println("");
+                        
                     }
                     else{
                          throw new Exception("no se encontro un empleado con ese codigo ");                        
@@ -115,6 +115,7 @@ Scanner sc = new Scanner(System.in);
         } catch (Exception e) {
            
         }
+        return art;
     }
     
 }
