@@ -118,14 +118,12 @@ public class empleadoServiceImp implements empleadoService {
     }
     
     @Override 
-    public void  buscarEmpleado(){
-        String ci_empleado; 
+    public empleado  buscarEmpleado(String ci_empleado){
+        System.out.println("adasd");
          
         empleado emple = new empleado();
         empleadoDao empleDao = null;
-        
-        System.out.println("Porfavor ingresa el numero de cedula del empleado a buscar:");
-        ci_empleado = sc.nextLine();
+
         try {
             //VALIDAR REGLAS NEGOCIO
   
@@ -140,7 +138,7 @@ public class empleadoServiceImp implements empleadoService {
                     if (listaEmpleado.get(i).getCI_EMPLEADO().contains(ci_empleado)){
                         emple = listaEmpleado.get(i);
                         System.out.println("El empleado se ha encontrado con exito");
-                        System.out.println(emple.getID_EMPLEADO()+" "+ emple.getCI_EMPLEADO() + " "+  emple.getNOMBRE() + " "+ emple.getDIRECCION() + " "+  emple.getFECHA_INICIO()+ " "+ emple.getFECHA_FINAL());
+                       // System.out.println(emple.getID_EMPLEADO()+" "+ emple.getCI_EMPLEADO() + " "+  emple.getNOMBRE() + " "+ emple.getDIRECCION() + " "+  emple.getFECHA_INICIO()+ " "+ emple.getFECHA_FINAL());
                     }
                     else{
                          throw new Exception("no se encontro un empleado con ese CI ");                        
@@ -153,7 +151,7 @@ public class empleadoServiceImp implements empleadoService {
         }
         
        
-        
+      return emple;  
     }
     
 

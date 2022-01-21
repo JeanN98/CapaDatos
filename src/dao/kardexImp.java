@@ -89,26 +89,26 @@ public class kardexImp implements kardexDao {
         try {
            
      
-            if (kardex.getID_KARDEX() == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializac'on del atributo 
+            if (kardex.getID_KARDEX() == 0) {  //es cero cuando se esta ingresando un registro nuevo: ver inicializacion del atributo 
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
                 
-                sql.append("INSERT INTO [dbo].[REGISTRA_KARDEX]\n" +
-"           ,[ID_EMPLEADO]\n" +
-"           ,[ID_DETALLE]\n" +
+                sql.append("INSERT INTO [dbo].[REGISTRA_KARDEX](\n" +
+"            [ID_EMPLEADO]\n" +
+"           ,[ID_ARTICULO]\n" +
 "           ,[FECHA_REGISTRO]\n" +
 "           ,[DESCRIPCION]\n" +
 "           ,[CANTIDAD]\n" +
 "           ,[PRECIO_TOTAL]\n" +
 "           ,[TIPO]\n" +
 "           ,[SALDO])"
-            + " VALUES ('").append(kardex.getID_EMPLEADO());
-                sql.append("', '").append(kardex.getID_ARTICULO());      //crear la cadena de conexion
-                sql.append("', '").append(kardex.getFECHA_REGISTRO());      //crear la cadena de conexion
+            + " VALUES (").append(kardex.getID_EMPLEADO());
+                sql.append(", ").append(kardex.getID_ARTICULO());      //crear la cadena de conexion
+                sql.append(", '").append(kardex.getFECHA_REGISTRO());      //crear la cadena de conexion
                 sql.append("', '").append(kardex.getDESCRIPCION());      //crear la cadena de conexion
-                sql.append("', '").append(kardex.getCANTIDAD());  
-                sql.append("', '").append(kardex.getPRECIO_TOTAL());      //crear la cadena de conexion
-                sql.append("', '").append(kardex.getTIPO());
-                sql.append("', '").append(kardex.getSALDO()).append("')");      //crear la cadena de conexion
+                sql.append("', ").append(kardex.getCANTIDAD());  
+                sql.append(", ").append(kardex.getPRECIO_TOTAL());      //crear la cadena de conexion
+                sql.append(", '").append(kardex.getTIPO());
+                sql.append("', ").append(kardex.getSALDO()).append(")");      //crear la cadena de conexion
                 this.conn.execute(sql.toString());      //ejecuta la query
             } else {   //es un registro previamente existente: estamos actualizando
                 StringBuilder sql = new StringBuilder();   //para crear la sentencia sql
@@ -119,7 +119,7 @@ public class kardexImp implements kardexDao {
                 sql.append("',[CANTIDAD] = ").append(kardex.getCANTIDAD());      //crear la cadena de conexion
                 sql.append(", [TIPO] = ").append(kardex.getTIPO())
                         
-                .append(" WHERE I[D_KARDEX] = ").append(kardex.getID_KARDEX());      //crear la cadena de conexion
+                .append(" WHERE [ID_KARDEX] = ").append(kardex.getID_KARDEX());      //crear la cadena de conexion
                 this.conn.execute(sql.toString());      //ejecuta la query
             }
             save = true;                                //cambia estado de bandera

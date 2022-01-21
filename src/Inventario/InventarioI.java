@@ -4,6 +4,8 @@
  */
 package Inventario;
 
+import model.articulo;
+import model.empleado;
 import model.usuario_cargo;
 
 /**
@@ -12,6 +14,6 @@ import model.usuario_cargo;
  */
 public interface InventarioI {
     
-    ArticulosSucursal(usuario_cargo usuario, int Id_sucursal);
+  void ArticulosSucursal(usuario_cargo usuario, int Id_sucursal);
     
 }

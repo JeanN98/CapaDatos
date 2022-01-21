@@ -19,8 +19,8 @@ public class usuario_cargo {
       private String USUARIO;
       private String CONTRACENIA;
 
-    public usuario_cargo(int ID_USUARIO_CARGO, String CI_USUARIO_CARGO, int ROl, String NOMBRE, String TELEFONO, String DIRECCION, String USUARIO, String CONTRACENIA) {
-        this.ID_USUARIO_CARGO = ID_USUARIO_CARGO;
+    public usuario_cargo( String CI_USUARIO_CARGO, int ROl, String NOMBRE, String TELEFONO, String DIRECCION, String USUARIO, String CONTRACENIA) {
+        this.ID_USUARIO_CARGO = 0;
         this.CI_USUARIO_CARGO = CI_USUARIO_CARGO;
         this.ROl = ROl;
         this.NOMBRE = NOMBRE;

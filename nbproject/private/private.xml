@@ -3,41 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/model/kardex.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/GestionarProductos.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/articuloImp.java</file>
+            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/GestionUsuarios.java</file>
+            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/gestionarKardex.java</file>
             <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/GestionarSucursalBodegaI.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/GestionarProductosImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/empleadoDao.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/capadedatos/CapaDeDatos.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/empleadoService.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/kardexImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/kardexDao.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/ProductoCaducar.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/model/categoriaArticulo.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/gestionarCategoria.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/model/articulo.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/bodega_sucursalImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/model/bodega_sucursal.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/CalculoStockImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/empleadoImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Factory/ConnectionDb.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/categoriaArticuloDao.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/usuario_cargoDao.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/usuariio_cargoImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/gestionarCategoriaImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/articuloDao.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Factory/FactoryConexionSqlServer.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/GestionarSucursalBodegaImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/categoriaArticuloImp.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/CalculoPorductoCaducar.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/ValidacionCedula.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/dao/bodega_sucursalDao.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/model/empleado.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/model/usuario_cargo.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Factory/FactoryConnectionDb.java</file>
             <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/CalculoStockI.java</file>
-            <file>file:/C:/Users/Stalin/OneDrive%20-%20ESCUELA%20SUPERIOR%20POLITECNICA%20DE%20CHIMBORAZO/Documentos/NetBeansProjects/CapaDatos/src/Services/empleadoServiceImp.java</file>
         </group>
     </open-files>
 </project-private>

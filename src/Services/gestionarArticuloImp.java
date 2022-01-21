@@ -85,15 +85,16 @@ Scanner sc = new Scanner(System.in);
 
     @Override
     public articulo buscarArticulo(int Id_Articulo ) {
-                 
+         
+        System.out.println("tetwrwe");     
         articulo art = new articulo ();
-          articuloDao artDao  = null;
-        
+          articuloDao artDao  = new articuloImp();
+       
         
         try {
             //VALIDAR REGLAS NEGOCIO  
               
-                artDao = new articuloImp();
+          
                 
                 List<articulo> listaArticulo =  artDao.list();
                 
@@ -102,12 +103,12 @@ Scanner sc = new Scanner(System.in);
                 
                     if (listaArticulo.get(i).getID_ARTICULO()==Id_Articulo){
                          art = listaArticulo.get(i);
-                        System.out.println("El empleado se ha encontrado con exito");
-                        System.out.println("");
+                        System.out.println("El articulo se ha encontrado con exito");
+               
                         
                     }
                     else{
-                         throw new Exception("no se encontro un empleado con ese codigo ");                        
+                         throw new Exception("no se encontro un articulo con ese ID ");                        
                     }                                   
                 }
                 

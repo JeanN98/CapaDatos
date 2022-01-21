@@ -19,7 +19,7 @@ import model.usuario_cargo;
  *
  * @author PIERO
  */
-public class Inventario {
+public class Inventario implements InventarioI{
     
     articulo articulo;    
     bodega_sucursal sucursal;
@@ -34,7 +34,7 @@ public class Inventario {
     
     ///////////////////////////////////////////////////////////////////
     
-    
+    @Override
     public void ArticulosSucursal(usuario_cargo usuario, int Id_sucursal){
     
         NivelesAccesoI nivelacs = new NivelesAcceso();

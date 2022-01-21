@@ -41,6 +41,7 @@ public class articuloImp implements articuloDao {
             ResultSet rs = this.conn.query(sql.toString());  //ejecuta la consulta
             while (rs.next()){  //mientras haya registros en la tabla
                 articulo articulo = new articulo();  
+                articulo.setID_ARTICULO(rs.getInt("ID_ARTICULO"));
                 articulo.setID_CATEGORIA(rs.getInt("ID_CATEGORIA"));
                 articulo.setID_BODEGA(rs.getInt("ID_BODEGA"));
                 articulo.setCODIGO_BARRA(rs.getString("CODIGO_BARRA"));
@@ -51,7 +52,7 @@ public class articuloImp implements articuloDao {
                 articulo.setFECHA_CADUCIDAD(rs.getString("FECHA_CADUCIDAD"));
                 articulo.setDESCRIPCION(rs.getString("DESCRIPCION"));
                 articulo.setESTADO(rs.getString("ESTADO"));
-                articulo.setUNIDAD_MEDIDA("UNIDAD_MEDIDA");
+                articulo.setUNIDAD_MEDIDA(rs.getString("UNIDAD_MEDIDA"));
       
               
                 list.add(articulo);  //añade el objeto temporal en la lista
@@ -157,7 +158,7 @@ public class articuloImp implements articuloDao {
         articulo articulo = new articulo();
         
         StringBuilder sql = new StringBuilder();    //para almacenar la consulta e efectuar en la bd
-        sql.append("SELECT * FROM ARTICULO WHERE id = ").append(id);   //cadena de consulta
+        sql.append("SELECT * FROM ARTICULO WHERE [ID_ARTICULO]= ").append(id);   //cadena de consulta
         
         try {
             ResultSet rs = this.conn.query(sql.toString());  //carga todos los registros que cumplen con la condicion del sql

@@ -22,6 +22,7 @@ public class kardex {
 
     public kardex( int ID_EMPLEADO, int ID_ARTICULO, String FECHA_REGISTRO, String DESCRIPCION, float CANTIDAD, float PRECIO_TOTAL, String TIPO, float SALDO) {
      
+        this.ID_KARDEX=0;
         this.ID_EMPLEADO = ID_EMPLEADO;
         this.ID_ARTICULO = ID_ARTICULO;
         this.FECHA_REGISTRO = FECHA_REGISTRO;

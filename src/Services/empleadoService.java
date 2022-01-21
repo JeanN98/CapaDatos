@@ -5,6 +5,8 @@
  */
 package Services;
 
+import model.empleado;
+
 /**
  *
  * @author Stalin
@@ -15,5 +17,5 @@ public interface empleadoService {
     public void eliminarEmpelado();
     public void listarEmpleados();
     public void modificarEmpleados();
-    public void buscarEmpleado();
+    public empleado buscarEmpleado(String ci_empleado);
 }
